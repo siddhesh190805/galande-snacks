@@ -17,8 +17,8 @@ export default function Hero() {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Split text reveal for title lines
-            const titleLines = titleRef.current.querySelectorAll('.title-line');
+            // Split text reveal for title lines (skip title-accent to preserve gradient)
+            const titleLines = titleRef.current.querySelectorAll('.title-line:not(.title-accent)');
             titleLines.forEach((line, index) => {
                 splitTextReveal(line, {
                     duration: 0.6,
@@ -27,6 +27,16 @@ export default function Hero() {
                     y: 80
                 });
             });
+
+            // Simple fade animation for title-accent (gradient text)
+            const accentLine = titleRef.current.querySelector('.title-accent');
+            if (accentLine) {
+                gsap.fromTo(accentLine,
+                    { y: 80, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.8, delay: 0.35, ease: 'power3.out' }
+                );
+            }
+
 
             // Subtitle animation
             gsap.fromTo(subtitleRef.current,
