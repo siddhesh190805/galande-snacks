@@ -218,6 +218,7 @@
 }
 
 .title-accent {
+    display: block;
     background: linear-gradient(90deg, #00f0ff, #bf00ff, #ff0080);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -226,8 +227,11 @@
     font-style: italic;
     text-transform: none;
     font-size: clamp(1.8rem, 5vw, 4rem);
+    line-height: 1.3;
     filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.5));
+    white-space: nowrap;
 }
+
 
 
 .hero-subtitle {
