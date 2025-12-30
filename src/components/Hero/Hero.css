@@ -202,13 +202,14 @@
 .title-line {
     display: block;
     font-family: var(--font-display);
-    font-size: var(--text-hero);
+    font-size: clamp(2.5rem, 8vw, 7rem);
     font-weight: 900;
-    line-height: 0.95;
+    line-height: 1.05;
     text-transform: uppercase;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.03em;
     color: var(--color-white);
     text-shadow: 0 0 40px rgba(0, 240, 255, 0.3);
+    white-space: nowrap;
 }
 
 .title-line .split-char {
@@ -224,9 +225,10 @@
     font-weight: 400;
     font-style: italic;
     text-transform: none;
-    font-size: var(--text-5xl);
+    font-size: clamp(1.8rem, 5vw, 4rem);
     filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.5));
 }
+
 
 .hero-subtitle {
     font-size: var(--text-lg);

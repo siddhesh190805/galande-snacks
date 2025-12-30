@@ -13,8 +13,6 @@ import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import TextMarquee from './components/TextMarquee/TextMarquee';
 import InteractiveSlider from './components/InteractiveSlider/InteractiveSlider';
-import BentoGrid from './components/BentoGrid/BentoGrid';
-import IngredientStory from './components/IngredientStory/IngredientStory';
 import Footer from './components/Footer/Footer';
 import CartDrawer from './components/Cart/CartDrawer';
 
@@ -26,7 +24,6 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [bgColor, setBgColor] = useState('#8B4513');
   const lenisRef = useRef(null);
 
   // Initialize Lenis smooth scroll after loading
@@ -59,16 +56,6 @@ function App() {
       gsap.ticker.remove(lenis.raf);
     };
   }, [isLoading]);
-
-  // Dynamic background color based on product hover
-  const handleColorChange = (color) => {
-    setBgColor(color);
-  };
-
-  // Update CSS custom property for background
-  useEffect(() => {
-    document.documentElement.style.setProperty('--bg-dynamic', bgColor);
-  }, [bgColor]);
 
   // Toggle cart
   const handleCartOpen = () => {
@@ -110,14 +97,8 @@ function App() {
           {/* Text Marquee */}
           <TextMarquee text="Crunch jo roz yaad aaye ✦ Premium Snacks Since 1999" />
 
-          {/* Interactive 3D Product Slider - Main Product Display */}
+          {/* Interactive Product Slider - Main Product Display */}
           <InteractiveSlider />
-
-          {/* Bento Grid with all products */}
-          <BentoGrid onColorChange={handleColorChange} />
-
-          {/* Ingredient Story */}
-          <IngredientStory />
 
           {/* Another Marquee */}
           <TextMarquee text="Authentic Maharashtrian Flavors ✦ Est. 1999" speed={40} />
