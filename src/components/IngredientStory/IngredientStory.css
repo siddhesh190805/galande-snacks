@@ -1,0 +1,228 @@
+.ingredient-story {
+    padding: var(--space-32) 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Floating Ingredients Background */
+.ingredients-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floating-ingredient {
+    position: absolute;
+    font-size: 4rem;
+    opacity: 0.3;
+    filter: blur(1px);
+    transition: transform 0.3s ease;
+}
+
+.ingredient-1 {
+    top: 10%;
+    left: 5%;
+}
+
+.ingredient-2 {
+    top: 20%;
+    right: 10%;
+}
+
+.ingredient-3 {
+    top: 50%;
+    left: 8%;
+}
+
+.ingredient-4 {
+    top: 60%;
+    right: 5%;
+}
+
+.ingredient-5 {
+    bottom: 30%;
+    left: 15%;
+}
+
+.ingredient-6 {
+    bottom: 20%;
+    right: 15%;
+}
+
+.ingredient-7 {
+    top: 35%;
+    left: 20%;
+    font-size: 3rem;
+}
+
+.ingredient-8 {
+    bottom: 10%;
+    left: 50%;
+    font-size: 3rem;
+}
+
+/* Story Content */
+.story-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.story-text-block {
+    margin-bottom: var(--space-12);
+}
+
+.story-badge {
+    display: inline-block;
+    padding: var(--space-2) var(--space-5);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-cream);
+    margin-bottom: var(--space-6);
+    backdrop-filter: blur(10px);
+}
+
+.story-title {
+    font-family: var(--font-display);
+    font-size: var(--text-5xl);
+    font-weight: 800;
+    color: var(--color-white);
+    line-height: 1.2;
+    margin-bottom: var(--space-2);
+}
+
+.story-title .highlight {
+    color: var(--color-cream);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.story-paragraph {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.story-paragraph p {
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    color: var(--color-cream);
+    opacity: 0.85;
+}
+
+.story-paragraph strong {
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+/* Features */
+.story-features {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-10);
+    flex-wrap: wrap;
+    margin: var(--space-12) 0;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    text-align: center;
+    max-width: 180px;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: var(--space-2);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.feature-text h4 {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: var(--space-1);
+}
+
+.feature-text p {
+    font-size: var(--text-sm);
+    color: var(--color-cream);
+    opacity: 0.7;
+}
+
+/* Quote */
+.story-quote {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 500;
+    font-style: italic;
+    color: var(--color-cream);
+    opacity: 0.9;
+    position: relative;
+    padding: var(--space-8);
+}
+
+.story-quote::before,
+.story-quote::after {
+    content: '"';
+    font-size: 4rem;
+    color: var(--color-white);
+    opacity: 0.2;
+    position: absolute;
+    font-family: serif;
+    line-height: 1;
+}
+
+.story-quote::before {
+    top: 0;
+    left: 0;
+}
+
+.story-quote::after {
+    bottom: 0;
+    right: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ingredient-story {
+        padding: var(--space-20) 0;
+        min-height: auto;
+    }
+
+    .story-title {
+        font-size: var(--text-3xl);
+    }
+
+    .story-features {
+        gap: var(--space-6);
+    }
+
+    .feature {
+        max-width: 140px;
+    }
+
+    .floating-ingredient {
+        font-size: 2.5rem;
+    }
+
+    .story-quote {
+        font-size: var(--text-lg);
+    }
+}
