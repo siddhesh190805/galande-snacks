@@ -74,10 +74,10 @@
 /* Background text - large parallax layer */
 .slider-bg-text {
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
-    transform: translate(-50%, -60%);
-    z-index: 2;
+    transform: translate(-50%, -50%);
+    z-index: 1;
     pointer-events: none;
     white-space: nowrap;
     width: 100%;
@@ -94,12 +94,12 @@
     line-height: 1;
     color: transparent;
     background: linear-gradient(180deg,
-            rgba(255, 255, 255, 0.06) 0%,
-            rgba(255, 255, 255, 0.02) 100%);
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(255, 255, 255, 0.01) 100%);
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.04);
-    opacity: 0.7;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.02);
+    opacity: 0.3;
 }
 
 /* Glow effect */
